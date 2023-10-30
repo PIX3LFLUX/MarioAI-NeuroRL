@@ -57,7 +57,7 @@ elif last_level == "SuperMarioBros-1-3-v0" and last_model == "eaaustrainiert":
 	model = "model1"
 	
 # Build the command to execute the Test_models.py script
-command = ["python", "Test_Models.py", level, model, automatic_mode]
+command = ["python", "test_models.py", level, model, automatic_mode]
 		
 # Execute the command
 subprocess.call(command)
