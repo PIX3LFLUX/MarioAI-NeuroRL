@@ -337,7 +337,7 @@ time.sleep(4)
 
 if automatic_mode == "True":
     pygame.quit()
-    subprocess.call(["python", "Automatic_Mode.py", level, model])
+    subprocess.call(["python", "automatic_mode.py", level, model])
     sys.exit()
 
 # Wait for a button press to close the score window
