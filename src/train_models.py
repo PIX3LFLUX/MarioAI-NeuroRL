@@ -771,15 +771,11 @@ class NeuroAgentManager:
 
 #####################################################################################################################################################################################
 
-# run(training_mode=False, pretrained=False)
-# runCustomAgent(training_mode=False)
-
-level = sys.argv[1]
-
-if level == "":
-  level = "SuperMarioBros-1-1-v0"
-
+if len(sys.argv) < 2:
+    level = "SuperMarioBros-1-1-v0"
+else:
+    level = sys.argv[1]
+  
 _NeuroAgentManager = NeuroAgentManager(it=8000, pretrained=False, n_agents=11, training_mode=True, n_gutes_erbgut=3,
                                        epsilon=0.1, level=level)
 _NeuroAgentManager.start_agents()
-
