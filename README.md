@@ -13,4 +13,4 @@ Neuroevolution and Reinforcement Learning for a Super Mario Bros Playing AI Agen
 * the automatic mode is a separate version of calling the test models script multiple times with different models automatically and infinetly
 * in all scripts the Pygame-Window can be closed and the script cancelled when pressing the ESC-Key
 * before running the Python scripts you have to setup the environment with the file requirements.txt (use "pip install -r requirements.txt" if you navigated to the MarioAI-NeuroRL directory  
-* this program is tested with python 3.11.2 so make sure you got the same version
+* this project is tested with python 3.11.2 so make sure you got the same version
