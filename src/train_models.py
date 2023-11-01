@@ -4,6 +4,7 @@ import torch.nn as nn
 import random
 import gym_super_mario_bros
 from nes_py.wrappers import JoypadSpace
+from pygame.locals import K_ESCAPE
 from tqdm import tqdm
 import pickle
 from gym_super_mario_bros.actions import RIGHT_ONLY
@@ -645,6 +646,11 @@ class NeuroAgentManager:
                     if terminal:
                         break
                     
+                    for event in pygame.event.get():
+                        if event.type == pygame.KEYDOWN:
+                            if event.key == K_ESCAPE:
+                                pygame.quit()
+
                     if ep_num != 0:
                         if ag_num in best_agents_ind:  # Checking if the agent is part of the best agents
                             break
