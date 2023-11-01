@@ -12,3 +12,4 @@ Neuroevolution and Reinforcement Learning for a Super Mario Bros Playing AI Agen
 * in the directory models you can find pre-trained AI models for level 1,2 and 3, they will be used when the test_models.py script is started
 * the automatic mode is a separate version of calling the test models script multiple times with different models automatically and infinetly
 * in all scripts the Pygame-Window can be closed and the script cancelled when pressing the ESC-Key
+* before running the Python scripts you have to setup the environment with the file requirements.txt (use "pip install -r requirements.txt" if you navigated to the MarioAI-NeuroRL directory  
