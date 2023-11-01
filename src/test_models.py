@@ -198,7 +198,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 net = CustomSolver(observation_space, action_space).to(device)
 
-net.load_state_dict(torch.load(f"{model}.pt", map_location=torch.device(device)))
+net.load_state_dict(torch.load(f"models/{model}.pt", map_location=torch.device(device)))
 
 # Mapping model to model_info
 model_info = {"model1": "1000 iterations",
@@ -337,7 +337,7 @@ time.sleep(4)
 
 if automatic_mode == "True":
     pygame.quit()
-    subprocess.call(["python", "automatic_mode.py", level, model])
+    subprocess.call(["python", "src/automatic_mode.py", level, model])
     sys.exit()
 
 # Wait for a button press to close the score window
@@ -346,7 +346,7 @@ if automatic_mode != "True":
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 pygame.quit()
-                subprocess.call(["python", "GUI.py"])
+                subprocess.call(["python", "src/GUI.py"])
                 sys.exit()
             
 
