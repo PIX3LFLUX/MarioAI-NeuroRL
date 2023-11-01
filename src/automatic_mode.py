@@ -18,46 +18,46 @@ automatic_mode = "True"
 # Choose right level and model for next run	
 if last_level == "" and last_model == "":
 	level = "SuperMarioBros-1-1-v0" 
-	model = "../models/model1"
+	model = "model1"
 elif last_level == "SuperMarioBros-1-1-v0" and last_model == "model1":
 	level = "SuperMarioBros-1-2-v0"
-	model = "../models/1000it"
+	model = "1000it"
 elif last_level == "SuperMarioBros-1-2-v0" and last_model == "1000it":
 	level = "SuperMarioBros-1-3-v0"
-	model = "../models/ea1000it"
+	model = "ea1000it"
 elif last_level == "SuperMarioBros-1-3-v0" and last_model == "ea1000it":
 	level = "SuperMarioBros-1-1-v0"
-	model = "../models/model2"
+	model = "model2"
 elif last_level == "SuperMarioBros-1-1-v0" and last_model == "model2":
 	level = "SuperMarioBros-1-2-v0"
-	model = "../models/2000it"
+	model = "2000it"
 elif last_level == "SuperMarioBros-1-2-v0" and last_model == "2000it":
 	level = "SuperMarioBros-1-3-v0"
-	model = "../models/ea2000it"
+	model = "ea2000it"
 elif last_level == "SuperMarioBros-1-3-v0" and last_model == "ea2000it":
 	level = "SuperMarioBros-1-1-v0"
-	model = "../models/model3"
+	model = "model3"
 elif last_level == "SuperMarioBros-1-1-v0" and last_model == "model3":
 	level = "SuperMarioBros-1-2-v0"
-	model = "../models/8000it"
+	model = "8000it"
 elif last_level == "SuperMarioBros-1-2-v0" and last_model == "8000it":
 	level = "SuperMarioBros-1-3-v0"
-	model = "../models/ea8000it"
+	model = "ea8000it"
 elif last_level == "SuperMarioBros-1-3-v0" and last_model == "ea8000it":
 	level = "SuperMarioBros-1-1-v0"
-	model = "../models/model4"
+	model = "model4"
 elif last_level == "SuperMarioBros-1-1-v0" and last_model == "model4":
 	level = "SuperMarioBros-1-2-v0"
-	model = "../models/austrainiert"
+	model = "austrainiert"
 elif last_level == "SuperMarioBros-1-2-v0" and last_model == "austrainiert":
 	level = "SuperMarioBros-1-3-v0"
-	model = "../models/eaaustrainiert"
+	model = "eaaustrainiert"
 elif last_level == "SuperMarioBros-1-3-v0" and last_model == "eaaustrainiert":
 	level = "SuperMarioBros-1-1-v0"
-	model = "../models/model1"
+	model = "model1"
 	
 # Build the command to execute the Test_models.py script
-command = ["python", "test_models.py", level, model, automatic_mode]
+command = ["python", "src/test_models.py", level, model, automatic_mode]
 		
 # Execute the command
 subprocess.call(command)
