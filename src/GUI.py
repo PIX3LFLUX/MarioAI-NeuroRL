@@ -72,6 +72,50 @@ def level_selector():
 
     return selected_level
 
+# Function to select the training mode
+def training_mode_selector():
+    running = True
+    selected_training_mode = None
+
+    while running:
+        screen.fill(BLACK)
+
+        # Display text
+        title_text = font.render("Select Training Mode", True, WHITE)
+        train_text = font.render("1. Train Models", True, WHITE)
+        test_text = font.render("2. Test Models", True, WHITE)
+
+        # Position the text
+        title_rect = title_text.get_rect(center=(width // 2, height // 4))
+        train_rect = train_text.get_rect(center=(width // 2, height // 2))
+        test_rect = test_text.get_rect(center=(width // 2, height // 2 + 50))
+
+        # Blit the text onto the screen
+        screen.blit(title_text, title_rect)
+        screen.blit(train_text, train_rect)
+        screen.blit(test_text, test_rect)
+
+        # Update the display
+        pygame.display.flip()
+
+        # Process events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1:
+                    print("Train Models mode selected.")
+                    selected_training_mode = "Train Models"
+                    running = False
+                elif event.key == pygame.K_2:
+                    print("Test Models mode selected.")
+                    selected_training_mode = "Test Models"
+                    running = False
+
+    return selected_training_mode
+
 # Game loop
 running = True
 selected_mode = None
@@ -110,6 +154,7 @@ while running:
             if event.key == pygame.K_1:
                 print("AI-Player mode selected.")
                 selected_mode = "AI-Player"
+                selected_training_mode = training_mode_selector()  # Call the training mode selection
                 running = False
             elif event.key == pygame.K_2:
                 print("Human-Player mode selected.")
@@ -122,7 +167,7 @@ while running:
     #            pygame.quit()
 
 # Check if a mode was selected
-if selected_mode == "AI-Player":
+if selected_mode == "AI-Player" and selected_training_mode == "Test Models":
     running = True
     while running:
         screen.fill(BLACK)
@@ -181,16 +226,18 @@ if selected_mode == "AI-Player":
         #            pygame.quit()
     
 # Check if a training mode was selected
-if selected_test_model or (selected_mode == "Human-Player"):
+if selected_test_model or (selected_mode == "Human-Player") or (selected_training_mode == "Train Models"):
     selected_level = level_selector()
 
 automatic_mode = "False"
 
 # Check if a training mode and level were selected
-if (selected_test_model or (selected_mode == "Human-Player")) and selected_level:
+if (selected_test_model or (selected_mode == "Human-Player") or selected_training_mode == "Train Models") and selected_level:
     print(f"{selected_mode} mode selected for level {selected_level}.")
     pygame.quit()
-    if selected_mode == "AI-Player":
-        subprocess.call(["python", "test_models.py", selected_level, selected_test_model, automatic_mode])
+    if selected_mode == "AI-Player" and selected_training_mode == "Test Models":
+        subprocess.call(["python", "src/test_models.py", selected_level, selected_test_model, automatic_mode])
+    elif selected_mode == "AI-Player" and selected_training_mode == "Train Models":
+        subprocess.call(["python", "src/train_models.py", selected_level])
     elif selected_mode == "Human-Player":
-        subprocess.call(["python", "human_player.py", selected_level])
+        subprocess.call(["python", "src/human_player.py", selected_level])
