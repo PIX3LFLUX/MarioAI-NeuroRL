@@ -15,7 +15,11 @@ def make_env(level):
 
 def run_Self_Player():
     
-    level = sys.argv[1]
+
+    if len(sys.argv) < 2:
+        level = "SuperMarioBros-1-1-v0"
+    else:
+        level = sys.argv[1]
     
     pygame.init()
     
