@@ -9,6 +9,7 @@ Neuroevolution and Reinforcement Learning for a Super Mario Bros Playing AI Agen
 * you can find all python files in the directory src
 * all scripts can be started from the GUI, if the file GUI.py is started in the same directory e.g. "python src/GUI.py"
 * the file train_models.py can either be started directly e.g. via the batch command "python .../train_models.py" (environment is level 1) or via the GUI (select level for environment), same counts for test_models.py
+* same for the other files 
 * in the directory models you can find pre-trained AI models for level 1,2 and 3, they will be used when the test_models.py script is started
 * the automatic mode is a separate version of calling the test models script multiple times with different models automatically and infinetly
 * in all scripts the Pygame-Window can be closed and the script cancelled when pressing the ESC-Key
