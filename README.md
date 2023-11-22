@@ -3,8 +3,9 @@ Neuroevolution and Reinforcement Learning for a Super Mario Bros Playing AI Agen
 
 * this project is highly influenced from two major works
   1. _Play Super Mario Bros with a Double Deep Q-Network_ by Andrew Grebenisan (Python Project)
-  2. [_Play Super Mario Bros with a Double Deep Q-Network_ by Andrew Grebenisan (Python Project)](https://arxiv.org/abs/1805.07917)
-  3. _Evolution-Guided Policy Gradient in Reinforcement Learning_ by Shauharda Khadka and Kagan Tumer (Scientific Paper)
+  2. [_Play Super Mario Bros with a Double Deep Q-Network_ by Andrew Grebenisan (Python Project)](https://blog.paperspace.com/building-double-deep-q-network-super-mario-bros/)
+  3. [_Evolution-Guided Policy Gradient in Reinforcement Learning_ by Shauharda Khadka and Kagan Tumer (Scientific Paper)](https://arxiv.org/abs/1805.07917)
+  4. _Evolution-Guided Policy Gradient in Reinforcement Learning_ by Shauharda Khadka and Kagan Tumer (Scientific Paper)
 * also note that chatGPT was used as a tool for programming 
 * the whole project is written in python
 * you can find all python files in the directory src
